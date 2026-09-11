@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>BokListeApp</title>
+  </head>
+  <body>
+    <main>
+      <h1>Bok Liste App</h1>
+      <section>
+        <form action="submit" id="bookForm">
+          <!-- Boknavn -->
+          <label for="bookName"
+            >Bok Navn:
+            <input type="text" name="bookName" id="bookName" />
+          </label>
+          <!--Forfatter  -->
+          <label for="author"
+            >Forfatter:
+            <input type="text" name="author" id="author" />
+          </label>
+          <!-- Antall sider -->
+          <label for="pages"
+            >Antall sider:
+            <input type="text" name="pages" id="pages" />
+          </label>
+          <!--Rating  -->
+          <label for="rating"
+            >Rating:
+            <input type="number" name="rating" id="rating" />
+          </label>
+          <!-- submit knapp -->
+          <button type="submit">Submit</button>
+        </form>
+        <!-- Søke og slettefunksjon kommer senere -->
+      </section>
+    </main>
+  </body>
+</html>
