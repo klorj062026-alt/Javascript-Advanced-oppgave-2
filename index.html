@@ -25,7 +25,18 @@
           <!--Sjanger -->
           <label for="genre"
             >Sjanger:
-            <input type="text" name="genre" id="genre" />
+            <select name="genre" name="genre" id="genre">
+              <option value="Fiction">Fiction</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Science Fiction">Science Fiction</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Romance">Romance</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Biography/Memoir">Biography/Memoir</option>
+              <option value="Historical">Historical</option>
+              <option value="Other">Other</option>
+            </select>
+            <!-- <input type="text" name="genre" id="genre" /> -->
           </label>
           <!-- Antall sider -->
           <label for="pages"
@@ -35,7 +46,14 @@
           <!--Rating  -->
           <label for="rating"
             >Rating:
-            <input type="number" name="rating" id="rating" />
+            <select name="rating" name="rating" id="rating">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <!-- <input type="number" name="rating" id="rating" /> -->
           </label>
           <!-- submit knapp -->
           <button type="submit">Submit</button>
