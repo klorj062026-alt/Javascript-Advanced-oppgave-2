@@ -35,3 +35,12 @@ Jeg vil bruke JSON.stringify for å lagre objektet i localstorage som ren tekst 
 Steg 3: Hente info og Lage cards
 
 For å hente infoen vi har lagret i localstorage må vi bruke getItem + nøkkelnavnet vi har laget ("bookinfo"), lage en variabel som heter getBooks som går inn i JSON og parser "bookinfo" om til et objekt igjen, slik at vi kan bruke det i Javascript
+
+Steg 4: Lage sletteknapper.
+
+Jeg laget en enkel sletteknapp i HTML, som bare removet alt i "bookinfo" Ganske enkelt å greit.
+
+For å lage en sletteknapp som slettet en og en bok, måtte jeg først gi elementet som ble laget(bok-kortet) en id slik at den og dataen kunne bli targetet.
+Deretter legge til en deletebutton på hvert kort og tagge den med den id-en. og til slutt en delete funksjon.
+
+Ekstra ting:

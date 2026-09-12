@@ -4,6 +4,8 @@ const bookCont = document.querySelector("#bookContainer");
 
 const searchBar = document.querySelector("#search");
 
+const searchBtn = document.querySelector("#searchBtn");
+
 const deleteAllBtn = document.querySelector("#delete_All_Btn");
 
 // Funksjon som sjekker at den er fylt ut ordentlig
@@ -74,7 +76,13 @@ function createBookCards(searchedBooks) {
       const rating = document.createElement("p");
       const ratingtxt = document.createTextNode("Rating: " + bookI.rating);
       rating.append(ratingtxt);
-      //
+      // Sletteknapp
+      const deleteBtn = document.createElement("Button");
+      deleteBtn.classList.add("delete_btn");
+      deleteBtn.textContent = "Slett denne boken";
+      deleteBtn.addEventListener("click", () => {
+        deleteBook(bookI.bookName);
+      });
 
       const img = document.createElement("img");
 
@@ -84,6 +92,7 @@ function createBookCards(searchedBooks) {
       containDiv.appendChild(genre);
       containDiv.appendChild(pages);
       containDiv.appendChild(rating);
+      containDiv.appendChild(deleteBtn);
 
       bookCont.appendChild(containDiv);
     }
@@ -92,9 +101,19 @@ function createBookCards(searchedBooks) {
 
 createBookCards("NA");
 
-searchBar.addEventListener("input", (e) => {
-  let searchValue = searchBar.value;
-  createBookCards(searchValue);
+function deleteBook(bookName) {
+  let getBooks = JSON.parse(localStorage.getItem("bookinfo")) || [];
+  // Jeg setter, for enkelhetens skyld, slette id-en til det samme som tittelen som blir ført inn, selv om det kan føre til duplikater og andre misforståelser.
+  getBooks = getBooks.filter((book) => book.bookName !== bookName);
+  if (confirm("Vil du slette denne boken??")) {
+    localStorage.setItem("bookinfo", JSON.stringify(getBooks));
+    createBookCards("NA");
+  }
+}
+
+searchBtn.addEventListener("click", (e) => {
+  // let searchValue = ;
+  createBookCards(searchBar.value);
 });
 
 deleteAllBtn.addEventListener("click", (e) => {

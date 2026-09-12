@@ -11,7 +11,7 @@
     <main>
       <h1>Bok Liste App</h1>
       <section>
-        <form action="submit" id="bookForm">
+        <form class="book-form" action="submit" id="bookForm">
           <!-- Boknavn -->
           <label for="bookName"
             >Bok Navn:
@@ -55,10 +55,13 @@
             </select>
             <!-- <input type="number" name="rating" id="rating" /> -->
           </label>
+
           <!-- submit knapp -->
-          <button type="submit">Submit</button>
+          <button class="submit-btn" type="submit">Submit</button>
         </form>
-        <!-- Søke og slettefunksjon kommer senere -->
+      </section>
+      <!-- Søke og slettefunksjon kommer senere -->
+      <section>
         <search>
           <input
             type="search"
@@ -67,10 +70,17 @@
             placeholder="Søk etter bok..."
             aria-label="Search site content"
           />
-          <button type="submit">Søk</button>
+
+          <button type="input" class="search_btn" id="searchBtn" name="search">
+            Søk
+          </button>
         </search>
-        <button id="delete_All_Btn" type="button">SLETT ALLE BØKER!</button>
-        <div id="bookContainer"></div>
+
+        <button id="delete_All_Btn" class="delete_All_Btn" type="button">
+          SLETT ALLE BØKER!
+        </button>
+
+        <div class="book_container" id="bookContainer"></div>
       </section>
     </main>
   </body>
