@@ -32,4 +32,6 @@ Ved hjelp av form-id; queryselector og eventListner. Skal jeg nå lage en funksj
 
 Jeg vil bruke JSON.stringify for å lagre objektet i localstorage som ren tekst og deretter JSON.parse for å gjøre infoen som ligger der tilbake til en objekt som kan brukes senere når jeg lager kortene.
 
-Steg 3: Lage cards
+Steg 3: Hente info og Lage cards
+
+For å hente infoen vi har lagret i localstorage må vi bruke getItem + nøkkelnavnet vi har laget ("bookinfo"), lage en variabel som heter getBooks som går inn i JSON og parser "bookinfo" om til et objekt igjen, slik at vi kan bruke det i Javascript

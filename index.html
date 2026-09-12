@@ -22,10 +22,15 @@
             >Forfatter:
             <input type="text" name="author" id="author" />
           </label>
+          <!--Sjanger -->
+          <label for="genre"
+            >Sjanger:
+            <input type="text" name="genre" id="genre" />
+          </label>
           <!-- Antall sider -->
           <label for="pages"
             >Antall sider:
-            <input type="text" name="pages" id="pages" />
+            <input type="number" name="pages" id="pages" />
           </label>
           <!--Rating  -->
           <label for="rating"
@@ -46,7 +51,7 @@
           />
           <button type="submit">Søk</button>
         </search>
-        <button id="deletAllBtn" type="button">SLETT ALLE BØKER!</button>
+        <button id="delete_All_Btn" type="button">SLETT ALLE BØKER!</button>
         <div id="bookContainer"></div>
       </section>
     </main>
