@@ -57,3 +57,5 @@ Så når jeg skal f.eks i createBookCards funksjonen bruker objekt-parameteret b
 Å bruke denne metoden gjør det til en litt kortere og mer lesbar kode og med mindre repetisjon. Men personlig vil jeg si at det til syvende og sist er en preferanse.
 
 Ekstra ting:
+
+PS. Vi har aldri hatt noen forelesning om hvordan lage README fil. Så jeg har bare gjettet på hva som er forventet at en slik fil skal inneholde.
