@@ -43,4 +43,17 @@ Jeg laget en enkel sletteknapp i HTML, som bare removet alt i "bookinfo" Ganske 
 For å lage en sletteknapp som slettet en og en bok, måtte jeg først gi elementet som ble laget(bok-kortet) en id slik at den og dataen kunne bli targetet.
 Deretter legge til en deletebutton på hvert kort og tagge den med den id-en. og til slutt en delete funksjon.
 
+Steg 5: sorteringsfunksjonen
+
+Jeg har lagt inn en sorteringsfunksjon ved å først lage et select element og dermed forskjellige options i HTML. Deretter hentet elementet og laget en variabel + en eventListener og deretter puttet inn en sjekk på verdiene inne i createBookCards funksjonen ved hjelp av en ternary-operator, som jeg bytter litt på hvis de er desc eller asc.
+Til slutt måtte jeg oppdatere alle createCards-funksjonene til å inkludere sortSelecter verdien.
+
+Destructuring:
+
+Destructuring er bare en annen måte å hente verdier fra objekter eller Arrays og lagre de direkte i variabler uten å skrive objekt og egenskap hver gang.
+
+Så når jeg skal f.eks i createBookCards funksjonen bruker objekt-parameteret bookI, kan jeg lage nye variabler ved å skrive const {og alle nøklene jeg vil bruke} istedet for å bruke property access (bookI.bookName, bookI.author) osv hver gang jeg skal finne nøkkelen og hente verdien.
+
+Å bruke denne metoden gjør det til en litt kortere og mer lesbar kode og med mindre repetisjon. Men personlig vil jeg si at det til syvende og sist er en preferanse.
+
 Ekstra ting:

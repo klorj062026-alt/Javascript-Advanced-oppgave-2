@@ -25,7 +25,7 @@
           <!--Sjanger -->
           <label for="genre"
             >Sjanger:
-            <select name="genre" name="genre" id="genre">
+            <select name="genre" id="genre">
               <option value="Fiction">Fiction</option>
               <option value="Fantasy">Fantasy</option>
               <option value="Science Fiction">Science Fiction</option>
@@ -46,7 +46,7 @@
           <!--Rating  -->
           <label for="rating"
             >Rating:
-            <select name="rating" name="rating" id="rating">
+            <select name="rating" id="rating">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -75,6 +75,18 @@
             Søk
           </button>
         </search>
+
+        <!-- Sortering -->
+        <label for="sortSelect">
+          Sorter etter:
+          <select name="sort" id="sortSelect">
+            <option value="NA">Ingen sortering</option>
+            <option value="titleAsc">Tittel (A-Å)</option>
+            <option value="titleDesc">Tittel (Å-A)</option>
+            <option value="ratingAsc">Rating (lav-høy)</option>
+            <option value="ratingDesc">Rating (høy-lav)</option>
+          </select>
+        </label>
 
         <button id="delete_All_Btn" class="delete_All_Btn" type="button">
           SLETT ALLE BØKER!
