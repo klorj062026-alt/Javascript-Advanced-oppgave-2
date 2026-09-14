@@ -40,13 +40,20 @@ Steg 4: Lage sletteknapper.
 
 Jeg laget en enkel sletteknapp i HTML, som bare removet alt i "bookinfo" Ganske enkelt å greit.
 
-For å lage en sletteknapp som slettet en og en bok, måtte jeg først gi elementet som ble laget(bok-kortet) en id slik at den og dataen kunne bli targetet.
-Deretter legge til en deletebutton på hvert kort og tagge den med den id-en. og til slutt en delete funksjon.
+For å lage en sletteknapp som slettet en og en bok, targete bokkortet.måtte jeg først gi elementet som ble laget(bok-kortet) en id slik at den og dataen kunne bli targetet.
 
-Steg 5: sorteringsfunksjonen
+Deretter legge til en deletebutton på hvert kort og tagge den med den bookName.
+
+Steg 5: sorterings og søkefunksjonen
 
 Jeg har lagt inn en sorteringsfunksjon ved å først lage et select element og dermed forskjellige options i HTML. Deretter hentet elementet og laget en variabel + en eventListener og deretter puttet inn en sjekk på verdiene inne i createBookCards funksjonen ved hjelp av en ternary-operator, som jeg bytter litt på hvis de er desc eller asc.
 Til slutt måtte jeg oppdatere alle createCards-funksjonene til å inkludere sortSelecter verdien.
+
+Jeg har også lagt til en søkefunksjon
+
+Favoritt funksjon. Jeg la også til en favoritt funksjon som filtrerer ut de bøkene som ikke er merket som favoritter.
+
+Den ligger også inni sorter etter dropdown-en, så er kanskje litt rotete, skal vurdere å gjøre det til en egen knapp heller.
 
 Destructuring:
 
@@ -57,5 +64,7 @@ Så når jeg skal f.eks i createBookCards funksjonen bruker objekt-parameteret b
 Å bruke denne metoden gjør det til en litt kortere og mer lesbar kode og med mindre repetisjon. Men personlig vil jeg si at det til syvende og sist er en preferanse.
 
 Ekstra ting:
+
+Skulle legge til en mulighet for å legge inn bildelink. Har ikke helt kommet til det ennå.
 
 PS. Vi har aldri hatt noen forelesning om hvordan lage README fil. Så jeg har bare gjettet på hva som er forventet at en slik fil skal inneholde.

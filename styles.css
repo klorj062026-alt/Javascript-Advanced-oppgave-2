@@ -112,3 +112,7 @@ input {
   align-items: center;
   background-color: rgb(255, 0, 0);
 }
+
+.is_favorite {
+  background-color: rgb(150, 3, 255);
+}

@@ -26,6 +26,9 @@ bookForm.addEventListener("submit", (e) => {
     return;
   }
 
+  // setter favoritt funksjonen til false, slik at den kan trigges
+  data.favorite = false;
+
   let bookArray = [];
 
   if (localStorage.getItem("bookinfo")) {
@@ -78,10 +81,14 @@ function createBookCards(searchedBooks, sortBooks) {
       book1.rating < book2.rating ? 1 : book1.rating > book2.rating ? -1 : 0,
     );
   }
+  // Filtrerings funksjon for å kun vise de som er favoritter
+  if (sortBooks === "favorite") {
+    getBooks = getBooks.filter((book) => book.favorite);
+  }
 
   getBooks.forEach((bookI) => {
     // Destructuring
-    const { bookName, author, genre, pages, rating } = bookI;
+    const { bookName, author, genre, pages, rating, favorite } = bookI;
 
     // Lage book-card
     const containDiv = document.createElement("div");
@@ -106,6 +113,17 @@ function createBookCards(searchedBooks, sortBooks) {
     const ratingP = document.createElement("p");
     const ratingtxt = document.createTextNode("Rating: " + rating);
     ratingP.append(ratingtxt);
+    // Favoritt
+    const favoriteBtn = document.createElement("Button");
+    favoriteBtn.classList.add("favorite_btn");
+    favoriteBtn.textContent = "favoritt";
+    if (favorite) {
+      favoriteBtn.classList.add("is_favorite");
+    }
+    favoriteBtn.addEventListener("click", () => {
+      toggleFavorite(bookName);
+    });
+
     // Sletteknapp
     const deleteBtn = document.createElement("Button");
     deleteBtn.classList.add("delete_btn");
@@ -122,6 +140,7 @@ function createBookCards(searchedBooks, sortBooks) {
     containDiv.appendChild(genreP);
     containDiv.appendChild(pagesP);
     containDiv.appendChild(ratingP);
+    containDiv.appendChild(favoriteBtn);
     containDiv.appendChild(deleteBtn);
 
     bookCont.appendChild(containDiv);
@@ -138,6 +157,15 @@ function deleteBook(bookName) {
     localStorage.setItem("bookinfo", JSON.stringify(getBooks));
     createBookCards("NA", sortSelecter.value);
   }
+}
+// Favoritt funksjon
+function toggleFavorite(bookName) {
+  let getBooks = JSON.parse(localStorage.getItem("bookinfo")) || [];
+  getBooks = getBooks.map((book) =>
+    book.bookName === bookName ? { ...book, favorite: !book.favorite } : book,
+  );
+  localStorage.setItem("bookinfo", JSON.stringify(getBooks));
+  createBookCards("NA", sortSelecter.value);
 }
 
 searchBtn.addEventListener("click", (e) => {
